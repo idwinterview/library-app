@@ -21,7 +21,7 @@ end
 
 group :development, :test do 
   gem 'byebug', '9.0.6' #forced version 
-  gem 'factory_girl'
+  gem 'factory_bot_rails'
   gem 'mocha', '1.3.0' #forced version 
   gem 'shoulda'
 end
