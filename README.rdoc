@@ -21,7 +21,7 @@ The db/seeds.rb file is preloaded with test data. Please use this when you setup
 
 ## Suggested Tasks:
 
-*   Review the code for best practices, efficiencies or logic flaws.
+*		Review the code for best practices, efficiencies or logic flaws.
 *		Review the test suite for any gaps.
 *		Build a new report that lists customers with a count of different types of books.
 *		Build an import process to retrieve new books from a file.
@@ -29,7 +29,7 @@ The db/seeds.rb file is preloaded with test data. Please use this when you setup
 
 ## Extra Credit:
 
-*   Review and/or update the code for any potenial security issues.
+*		Review and/or update the code for any potenial security issues.
 *		Review and/or update the code for any performance related changes.
 *		Enhance the usability and/or design.
 
