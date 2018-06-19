@@ -3,5 +3,4 @@ class Customer < User
   has_many(:books, order: "created_at desc")
   has_many(:audio_books, order: "created_at desc")
   has_many(:physical_books, order: "created_at desc")
-
 end

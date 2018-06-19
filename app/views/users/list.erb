@@ -12,7 +12,7 @@
   		</tr>
   		<% @customers.each do |customer| -%>
   			<tr class="<%= cycle("rowA", "rowB") -%>">
-          <td><%= link_to "#{customer.first_name} #{customer.last_name}", user_path(customer, view: 'librarian') %></td>
+          <td><%= link_to "#{customer.first_name} #{customer.last_name}", users_path(customer, view: 'librarian') %></td>
           <td><%= book_count(customer) %></td>
         </tr>
       <% end -%>
