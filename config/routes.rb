@@ -3,9 +3,7 @@ LibraryApp::Application.routes.draw do
   
   resources :users do
     collection do
-      get :index
       get :list
-      get :show
     end
   end
   

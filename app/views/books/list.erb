@@ -1,6 +1,6 @@
 <div id="feature" class="floatLeft">
   <div id="featureHeading">
-    <h1 class="floatLeft">Books for <%= link_to "#{@customer.first_name} #{@customer.last_name}", users_path(@customer, view: 'librarian') %></h1>
+    <h1 class="floatLeft">Books for <%= link_to "#{@customer.first_name} #{@customer.last_name}", user_path(@customer, view: 'librarian') %></h1>
     <div class="clear"></div>
   </div>
   
