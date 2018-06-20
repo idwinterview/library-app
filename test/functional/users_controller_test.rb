@@ -3,6 +3,8 @@ require "test_helper"
 class UsersControllerTest < ActionController::TestCase
   context "#index" do 
     should "render the correct template" do 
+      create(:customer)
+
       get :index 
 
       assert_template :index
@@ -11,6 +13,8 @@ class UsersControllerTest < ActionController::TestCase
 
   context "#list" do 
     should "render the correct template" do 
+      create(:customer)
+
       get :list
 
       assert_template :list

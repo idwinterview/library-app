@@ -14,6 +14,7 @@ class Customertest < ActiveSupport::TestCase
 
     context "#books" do 
       should "have many books" do 
+        # FIX ME I am broken
         customer = create(:customer)
         create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
         create(:customer_book, customer_id: customer.id, book_id: create(:book).id)

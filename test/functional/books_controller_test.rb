@@ -36,6 +36,7 @@ class BooksControllerTest < ActionController::TestCase
         book = create(:book)
         customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
+        request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
 
         customer_book.reload
@@ -48,6 +49,7 @@ class BooksControllerTest < ActionController::TestCase
         book = create(:book)
         customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
+        request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
 
         assert_equal "Book has been marked as returned.", flash[:success]
@@ -62,6 +64,7 @@ class BooksControllerTest < ActionController::TestCase
 
         CustomerBook.any_instance.expects(:save).returns(false)
 
+        request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
 
         customer_book.reload
@@ -76,6 +79,7 @@ class BooksControllerTest < ActionController::TestCase
 
         CustomerBook.any_instance.expects(:save).returns(false)
 
+        request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
 
         customer_book.reload
@@ -89,9 +93,10 @@ class BooksControllerTest < ActionController::TestCase
       book = create(:book)
       customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
+      request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)     
       post :returned, id: book.id, customer_id: customer.id
 
-      assert_redirected_to list_books_path
+      assert_redirected_to list_books_path(customer_id: customer.id)     
     end
   end
 end
