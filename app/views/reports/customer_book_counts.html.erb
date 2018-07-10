@@ -1,0 +1,11 @@
+<table>
+  <% @customers.each do |customer| %>
+    <tr>
+      <td><strong><%= "#{customer.first_name}" + "#{customer.last_name}"%>'s Books - </strong></td>
+      <td>Customer: <%= customer.customer_books.count  %></td>
+      <td>Audio: <%= customer.audio_books.count  %></td>
+      <td>Physical: </td>
+      <td><%= customer.physical_books.count  %></td>
+    </tr>
+  <% end %>
+</table>

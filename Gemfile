@@ -24,4 +24,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'mocha', '1.3.0' #forced version 
   gem 'shoulda', '~> 3.5'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'launchy'
 end

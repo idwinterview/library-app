@@ -1,4 +1,4 @@
-require "test_helper"
+require "../test_helper"
 
 class Customertest < ActiveSupport::TestCase
   context "associations" do 
@@ -14,24 +14,28 @@ class Customertest < ActiveSupport::TestCase
 
     context "#books" do 
       should "have many books" do 
-        # FIX ME I am broken
         customer = create(:customer)
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
+        create_list(:customer_book, 2, customer_id: customer.id, book_id: create(:book).id)
 
         assert_equal 2, customer.books.size
       end
     end
 
     context "audio_books" do 
-      should "have many audio books" do 
-        # TODO: Please Add
+      should "have many audio books" do
+        customer = create(:customer)
+        create_list(:audio_book, 2, customer_id: customer.id)
+
+        assert_equal 2, customer.audio_books.size
       end
     end
 
     context "physical_books" do 
-      should "have many physical books" do 
-        # TODO: Please Add
+      should "have many physical books" do
+        customer = create(:customer)
+        create_list(:physical_book, 2, customer_id: customer.id)
+
+        assert_equal 2, customer.physical_books.size
       end
     end
   end

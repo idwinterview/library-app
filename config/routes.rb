@@ -13,4 +13,6 @@ LibraryApp::Application.routes.draw do
       post :returned
     end
   end
+
+  get '/customer_book_counts', to: "reports#customer_book_counts"
 end
