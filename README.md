@@ -22,8 +22,14 @@ The db/seeds.rb file is preloaded with test data. Please use this when you setup
 ## Suggested Tasks:
 
 *		Review the code for best practices, efficiencies or logic flaws.
+- flaw: User signup hasn't been set up so the customer view is just displaying the first
+customer regardless of user
+- fixed missing html tags with commit: a7f5482
+
 *		Review the test suite for any gaps.
+- fixed failing tests with commit: 14e879d
 *		Build a new report that lists customers with a count of different types of books.
+- implemented this with commit: 8e8ea90
 *		Build an import process to retrieve new books from a file.
 *		Build a process to review new books and deliver then to the customer.
 
