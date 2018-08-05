@@ -37,4 +37,14 @@ class UsersControllerTest < ActionController::TestCase
       assert_template :show
     end
   end
+
+  context "#customer" do
+    should "render the correct template" do
+      customer = create(:customer)
+
+      get :customer
+
+      assert_template :customer
+    end
+  end
 end
