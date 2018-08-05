@@ -50,9 +50,8 @@ class Customertest < ActiveSupport::TestCase
       should "return customer" do
         customer = create(:customer)
 
-        returned_customer = Customer.where(["id = ?", customer.id]).first
 
-        assert_equal customer, returned_customer
+        assert_equal customer, Customer.find_customer(customer.id)
       end
     end
   end
