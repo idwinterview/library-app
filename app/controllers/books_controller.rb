@@ -1,13 +1,13 @@
 class BooksController < ApplicationController
   
   def list
-    @customer = Customer.where(["id = ?", params[:customer_id]]).first
-    @customer_books = CustomerBook.where(["customer_id = ?", params[:customer_id]])
+    @customer = Customer.find_customer(params[:customer_id])
+    @customer_books = @customer.customer_books
   end
   
   def returned
-    @customer = Customer.where(["id = ?", params[:customer_id]]).first
-    book = CustomerBook.where(["book_id = ? and customer_id = ?", params[:id], params[:customer_id]]).first
+    @customer = Customer.find_customer(params[:customer_id])
+    book = CustomerBook.find_customers_books(params[:id], params[:customer_id])
     book.status = 'returned'
     
     if book.save

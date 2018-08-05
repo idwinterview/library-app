@@ -3,5 +3,9 @@ class Customer < User
   has_many(:books, through: :customer_books, order: "created_at desc")
   has_many(:audio_books, through: :customer_books, source: :book, order: "created_at desc")
   has_many(:physical_books, through: :customer_books, source: :book, order: "created_at desc")
+
+    def self.find_customer(customer)
+      Customer.where(["id = ?", customer]).first
+    end
 end
  

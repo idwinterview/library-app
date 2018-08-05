@@ -28,7 +28,7 @@ class Customertest < ActiveSupport::TestCase
 
         create(:customer_book, customer_id: customer.id, book_id: create(:audio_book).id)
         create(:customer_book, customer_id: customer.id, book_id: create(:audio_book).id)
-byebug
+
         assert_equal 2, customer.audio_books.size
       end
     end
@@ -41,6 +41,18 @@ byebug
         create(:customer_book, customer_id: customer.id, book_id: create(:physical_book).id)
 
         assert_equal 2, customer.physical_books.size
+      end
+    end
+  end
+
+  context "methods" do
+    context "find_customer" do
+      should "return customer" do
+        customer = create(:customer)
+
+        returned_customer = Customer.where(["id = ?", customer.id]).first
+
+        assert_equal customer, returned_customer
       end
     end
   end

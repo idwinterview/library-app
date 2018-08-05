@@ -3,7 +3,7 @@ LibraryApp::Application.routes.draw do
   
   resources :users do
     collection do
-      get :list
+      get :list, :customer
     end
   end
   

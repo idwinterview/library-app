@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   
-  def index
+  def customer
+    @customers = Customer.all
   end
   
   def list
@@ -8,7 +9,7 @@ class UsersController < ApplicationController
   end
   
   def show
-    @customer = Customer.where(["id = ?", params[:id]]).first
-    @customer_books = CustomerBook.where(["customer_id = ?", params[:id]])
+    @customer = Customer.find_customer(params[:id])
+    @customer_books = @customer.customer_books
   end
 end
