@@ -14,7 +14,7 @@ FactoryBot.define do
     author "Jane Smith"
     category "Fiction"
   end
-
+  
   factory :audio_book, class: AudioBook do 
     title "A Fancy Audio Book"
     isbn "XXXX144444"
