@@ -4,4 +4,7 @@ class CustomerBook < ActiveRecord::Base
   
   attr_accessible :customer_id, :book_id, :status
   
+  def self.find_customers_books(book, customer)
+    CustomerBook.where(["book_id = ? and customer_id = ?", book, customer]).first
+  end
 end

@@ -3,14 +3,14 @@ LibraryApp::Application.routes.draw do
   
   resources :users do
     collection do
-      get :list
+      get :list, :customer
     end
   end
   
   resources :books do
     collection do
       get :list
-      post :returned
+      post :returned, :import
     end
   end
 end
