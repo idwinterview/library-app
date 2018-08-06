@@ -1,5 +1,8 @@
 class BooksController < ApplicationController
   
+  def new
+  end
+  
   def list
     @customer = Customer.find_customer(params[:customer_id])
     @customer_books = @customer.customer_books
@@ -18,4 +21,16 @@ class BooksController < ApplicationController
     
     redirect_to :back
   end
+
+  def import
+    Book.import(params[:file])
+    redirect_to books_path, notice: "New Books Added!"
+  end
+
+  def index
+    @books = Book.order_by_latest
+  end
+
+
+
 end

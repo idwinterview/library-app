@@ -99,4 +99,32 @@ class BooksControllerTest < ActionController::TestCase
       assert_redirected_to list_books_path(customer_id: customer.id)     
     end
   end
+
+  context "#new" do
+    should "render the correct template" do
+      create(:customer)
+
+      get :new
+
+      assert_template :new
+    end
+  end 
+
+  context "#index" do
+    should "render the correct template" do
+      create(:customer)
+
+      get :index
+
+      assert_template :index
+    end
+
+    should "assign books" do
+      create(:book)
+
+      get :index
+
+      assert assigns(:books)
+    end
+  end 
 end

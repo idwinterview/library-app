@@ -10,7 +10,7 @@ LibraryApp::Application.routes.draw do
   resources :books do
     collection do
       get :list
-      post :returned
+      post :returned, :import
     end
   end
 end
