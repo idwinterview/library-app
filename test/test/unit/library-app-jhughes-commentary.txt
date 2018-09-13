@@ -1,0 +1,79 @@
+"Rake routes" produces unusual paths, among other problems:
+
+me5@me5-Latitude-E6530:~/Desktop/library-app-jhughes$ rake routes
+          home        /                         users#index
+    list_users GET    /users/list(.:format)     users#list
+         users GET    /users(.:format)          users#index
+               POST   /users(.:format)          users#create
+      new_user GET    /users/new(.:format)      users#new
+     edit_user GET    /users/:id/edit(.:format) users#edit
+          user GET    /users/:id(.:format)      users#show
+               PUT    /users/:id(.:format)      users#update
+               DELETE /users/:id(.:format)      users#destroy
+    list_books GET    /books/list(.:format)     books#list
+returned_books POST   /books/returned(.:format) books#returned
+         books GET    /books(.:format)          books#index
+               POST   /books(.:format)          books#create
+      new_book GET    /books/new(.:format)      books#new
+     edit_book GET    /books/:id/edit(.:format) books#edit
+          book GET    /books/:id(.:format)      books#show
+               PUT    /books/:id(.:format)      books#update
+               DELETE /books/:id(.:format)      books#destroy
+
+
+Why does BooksController have @customer instances?
+
+Why is book not @book?
+
+UI missing a way to perform CRUD actions on books. 
+
+UI missing a way to perform CRUD actions on customers. 
+
+There are no "private" methods in any of the controllers. 
+
+Clicking "Customer View" in UI always takes you to the same URL ("http://localhost:3000/users/2?view=customer").
+
+database.yml contains remarks that aren't necessary, don't appear to belong there, or prevent app's database from being created or accessed:
+	username: postgres
+	password:
+	host: 127.0.0.1
+
+
+The app should have a sessions controller and user password validations to regulate permissions between librarian privileges vs. customer privileges.
+
+UI missing login prompts to differentiate access between customers and librarians.
+
+Polymorphic inheritance (mixins?) for different types of models (AudioBook, PhysicalBook, CustomerBook). 
+
+Biggest problem that needs addressing is there is no login 
+
+XXXX Routes aren't conventional (i.e. users#list, books#list, books#returned)
+
+XXXX Ruby on Rails's "convention over configuration" feature is largely undermined by not utilzing the appropriate conventions (e.g. naming conventions, routing conventions, etc.), necessitating unnecessary configuration to compensate. 
+
+XXXX Protect against forgery 
+
+
+
+linux box, linux commands, not much exposure to be 
+
+details to connecting to db
+apis big projects, working between groups
+
+providing an interface for someone else to connect to (api)
+
+how to build test document apis for a microservice you might provide
+
+providing api then calling another api to validate to ensure user allowed to access 1st api
+
+api exteral way to provide interface (similar to ui interfacing)
+
+challenges when connecting to api 
+
+abilty to think on feet/communicate 1. pause & think through what person is asking ("describe a moderately complex app" -- should have begun at high level w ror application) - toastmasters
+
+outline why ur doing something 
+outline what ur talking about
+talk about how
+
+
