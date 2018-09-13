@@ -1,0 +1,39 @@
+# development:
+#  adapter: postgresql
+#  database: library_app
+#  username: postgres
+#  password:
+#  host: 127.0.0.1
+ 
+ 
+# test:
+#  adapter: postgresql
+#  database: library_app_test
+#  username: postgres
+#  password:
+#  host: 127.0.0.1
+
+
+
+
+ # default: &default
+ #  adapter: postgresql
+ #  encoding: unicode
+ #  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  adapter: postgresql
+  # <<: *default
+  database: library_app2_development
+
+test:
+  adapter: postgresql
+  # <<: *default
+  database: library_app2_test
+
+# production:
+#   adapter: postgresql
+#   <<: *default
+#   database: library_app2_production
+#   username: library_app2
+#   password: <%= ENV['LIBARAY_APP2_DATABASE_PASSWORD'] %>
