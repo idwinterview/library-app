@@ -25,3 +25,4 @@ group :development, :test do
   gem 'mocha', '1.3.0' #forced version 
   gem 'shoulda', '~> 3.5'
 end
+gem 'devise'
