@@ -52,3 +52,25 @@ You should see this same information.
 Please commit any updates and/or comments to the repo. Add any additional comments, notes and/or instructions in the README under the "Enhancements" section. Also note if the db/seeds.rb file has been updated. The development team will review your submission and be ready for the technical portion of your interview.
 
 ## Enhancements
+
+The biggest problem I see that needs addressing is there is no sign-in logic or sessions logic to regulate access to different areas and features within the app. So I implemented the Devise gem, a well-known method for user authentication. Doing this would allow for different accounts to be set up (librarian "admins", customers) and different privileges assigned. If you go to http://localhost:3000/users/sign_in you will see there is now a functioning sign-in prompt.
+
+Other comments on the application:
+
+UI missing a way to perform CRUD actions on books. 
+
+UI missing a way to perform CRUD actions on customers. 
+
+There are no "private" methods in any of the controllers. 
+
+Clicking "Customer View" in UI always takes you to the same URL ("http://localhost:3000/users/2?view=customer").
+
+database.yml contains remarks that need to be fixed for security purposes. The current remarks aren't necessary, don't appear to belong there, or prevent app's database from being created or accessed:
+	username: postgres
+	password:
+	host: 127.0.0.1
+
+The app should have a sessions controller and user password validations to regulate permissions between librarian privileges vs. customer privileges. UI missing login prompts to differentiate access between customers and librarians. sThis can be addressed by adding the Devise gem, as discussed above. 
+
+Polymorphic inheritance (mixins?) for different types of models (AudioBook, PhysicalBook, CustomerBook). 
+
