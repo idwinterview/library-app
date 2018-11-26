@@ -19,7 +19,7 @@ This application displays the relationship between a customer and a library. It 
 
 The db/seeds.rb file is preloaded with test data. Please use this when you setup your DB.
 
-## Suggested Tasks:
+## Possible Tasks:
 
 *		Review the code for best practices, efficiencies or logic flaws.
 *		Review the test suite for any gaps.
