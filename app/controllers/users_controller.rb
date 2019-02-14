@@ -7,8 +7,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    set_customer
-    set_customer_books
+    @customer = retrieve_customer
+    @customer_books = @customer.customer_books
   end
 
   private
@@ -16,12 +16,9 @@ class UsersController < ApplicationController
     @customers = Customer.all
   end
 
-  def set_customer
-    @customer = Customer.find_by(id: permitted_params[:id])
-  end
-
-  def set_customer_books
-    @customer_books = CustomerBook.where(customer_id: permitted_params[:id])
+  def retrieve_customer
+    Customer.preload(:customer_books, :books)
+            .find_by(id: permitted_params[:id])
   end
 
   def permitted_params
