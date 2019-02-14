@@ -32,3 +32,7 @@ group :test do
   gem 'simplecov', require: false, group: :test
   gem 'capybara'
 end
+
+group :development do
+  gem 'bullet'
+end
