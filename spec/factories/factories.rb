@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :customer, class: Customer do
-    first_name { "John" }
-    last_name  { "Doe" }
+    sequence(:first_name) { |n| "John_#{n}"}
+    sequence(:last_name) { |n| "Doe_#{n}" }
   end
 
   factory :customer_book  do
@@ -9,9 +9,9 @@ FactoryBot.define do
   end
 
   factory :book do
-    title { "A Fancy Title" }
-    isbn { "ABC1112233" }
-    author { "Jane Smith" }
+    sequence(:title) { |n| "A Fancy Title #{n}"}
+    sequence(:isbn) { |n| "ABC" + (1112233 + n).to_s }
+    sequence(:author) { |n| "Jane Smith #{n}"}
     category { "Fiction" }
   end
 
