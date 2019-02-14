@@ -9,34 +9,38 @@
 # from scratch. The latter is a flawed and unsustainable approach (the more migrations
 # you'll amass, the slower it'll run and the greater likelihood for issues).
 #
-# It's strongly recommended to check this file into your version control system.
+# It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180523144616) do
+ActiveRecord::Schema.define(version: 20190212215128) do
 
-  create_table "books", :force => true do |t|
-    t.string   "type",       :limit => 20
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string   "type",       limit: 20
     t.integer  "isbn"
-    t.string   "title",      :limit => 50
-    t.string   "author",     :limit => 50
-    t.string   "category",   :limit => 50
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "title",      limit: 50
+    t.string   "author",     limit: 50
+    t.string   "category",   limit: 50
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+    t.integer  "user_id"
   end
 
-  create_table "customer_books", :force => true do |t|
+  create_table "customer_books", force: :cascade do |t|
     t.integer  "customer_id"
     t.integer  "book_id"
-    t.string   "status",      :limit => 15, :default => "checked out"
-    t.datetime "created_at",                                           :null => false
-    t.datetime "updated_at",                                           :null => false
+    t.string   "status",      limit: 15, default: "checked out"
+    t.datetime "created_at",                                     null: false
+    t.datetime "updated_at",                                     null: false
   end
 
-  create_table "users", :force => true do |t|
-    t.string   "type",       :limit => 10
-    t.string   "first_name", :limit => 50
-    t.string   "last_name",  :limit => 50
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+  create_table "users", force: :cascade do |t|
+    t.string   "type",       limit: 10
+    t.string   "first_name", limit: 50
+    t.string   "last_name",  limit: 50
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
   end
 
 end

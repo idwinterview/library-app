@@ -22,8 +22,8 @@ group :assets do
 end
 
 group :development, :test do 
-  gem 'byebug', '9.0.6' #forced version 
+  gem 'pry'
   gem 'factory_bot_rails'
-  gem 'mocha', '1.3.0' #forced version 
+  gem 'mocha'
   gem 'shoulda', '~> 3.5'
 end
