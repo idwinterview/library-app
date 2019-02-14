@@ -7,7 +7,7 @@ class BooksController < ApplicationController
   
   def returned
     @customer = Customer.where(["id = ?", params[:customer_id]]).first
-    book = CustomerBook.where(["book_id = ? and customer_id = ?", params[:id], params[:customer_id]]).first
+    book = CustomerBook.where(["bookable_id = ? and customer_id = ?", params[:id], params[:customer_id]]).first
     book.status = 'returned'
     
     if book.save

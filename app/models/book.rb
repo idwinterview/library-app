@@ -1,3 +1,4 @@
 class Book < ActiveRecord::Base
-  # belongs_to :customer
+  has_one :customer_book, as: :bookable
+  has_one :customer, through: :customer_book
 end

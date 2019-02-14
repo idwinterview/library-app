@@ -21,7 +21,7 @@ describe BooksController do
     it 'assigns customer books' do
       customer = create(:customer)
       book = create(:book)
-      create(:customer_book, customer_id: customer.id, book_id: book.id)
+      create(:customer_book, customer_id: customer.id, bookable_id: book.id)
 
       get :list, id: book.id, customer_id: customer.id
 
@@ -35,7 +35,7 @@ describe BooksController do
       it 'marks the book as returned' do
         customer = create(:customer)
         book = create(:book)
-        customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
+        customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
@@ -48,7 +48,7 @@ describe BooksController do
       it 'displays a success flash message' do
         customer = create(:customer)
         book = create(:book)
-        customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
+        customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
         post :returned, id: book.id, customer_id: customer.id
@@ -62,7 +62,7 @@ describe BooksController do
     it 'does not mark the book as returned' do
       customer = create(:customer)
       book = create(:book)
-      customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
+      customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
 
       allow_any_instance_of(CustomerBook).to receive(:save).and_return(false)
 
@@ -77,7 +77,7 @@ describe BooksController do
     it 'displays the correct error flash message' do
       customer = create(:customer)
       book = create(:book)
-      customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
+      customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
 
       allow_any_instance_of(CustomerBook).to receive(:save).and_return(false)
 
@@ -93,7 +93,7 @@ describe BooksController do
   it 'redirects correctly' do
     customer = create(:customer)
     book = create(:book)
-    customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
+    customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
 
     request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
     post :returned, id: book.id, customer_id: customer.id
