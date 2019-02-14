@@ -1,6 +1,6 @@
 <% book = customer_book.bookable %>
 
-<% if book.checked_out? %>
+<% if customer_book.status == 'checked out' %>
   <%= form_tag(returned_books_path) do %>
   	<%= hidden_field_tag :customer_id, @customer.id %>
   	<%= hidden_field_tag :id, book.id %>

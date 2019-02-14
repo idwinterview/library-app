@@ -21,6 +21,8 @@ shared_examples :book do |factory_hash|
     end
   end
 
+  # Didn't end up using these... CustomerBook turned out to be easier to rely
+  # upon with the STI/Polymorphism combo
   context '#checked_out?' do
     it 'is checked out if status is checked out' do
       book = create(:book)

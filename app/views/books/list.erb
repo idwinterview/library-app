@@ -3,7 +3,7 @@
     <h1 class="floatLeft">Books for <%= link_to "#{@customer.first_name} #{@customer.last_name}", user_path(@customer, view: 'librarian') %></h1>
     <div class="clear"></div>
   </div>
-  
+
   <%= render partial: 'shared/flash' %>
 
   <div id="featureWrap" class="floatLeft"> 
@@ -20,9 +20,9 @@
           <td><%= customer_book.created_at.to_date %></td>
           <td><%= customer_book.bookable.title %></td>
           <td><%= customer_book.bookable.author %></td>
-          <td><%= customer_book.status %></td>
+          <td><%= customer_book.status.titleize %></td>
           <td>
-            <%= render 'check_in_out_button', customer_book: customer_book %>
+            <%= render 'shared/check_in_out_button', customer_book: customer_book %>
           </td>
         </tr>
       <% end -%>
