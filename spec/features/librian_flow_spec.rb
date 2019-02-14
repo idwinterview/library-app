@@ -13,8 +13,10 @@ feature 'root librarian flow' do
     customers.each_with_index do |customer, i|
       expect(page).to have_content(customer.first_name)
       expect(page).to have_content(customer.last_name)
-      expect(page).to have_css("tr.customer-id-#{customers[i].id}",
-        text: "#{customers[i].books.length}")
+      expect(page).to have_css("tr.customer-id-#{customers[i].id} .audio-book-count",
+        text: "#{customers[i].audio_books.count}")
+      expect(page).to have_css("tr.customer-id-#{customers[i].id} .physical-book-count",
+        text: "#{customers[i].audio_books.count}")
     end
   end
 
