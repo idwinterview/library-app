@@ -1,12 +1,15 @@
-require 'test_helper'
-require 'rails/performance_test_help'
+# TODO - implement new performance testing strategy or remove this test
+# (PerformanceTest has been removed from rails)
 
-class BrowsingTest < ActionDispatch::PerformanceTest
-  # Refer to the documentation for all available options
-  # self.profile_options = { :runs => 5, :metrics => [:wall_time, :memory]
-  #                          :output => 'tmp/performance', :formats => [:flat] }
+# require 'test_helper'
+# require 'rails/performance_test_help'
 
-  def test_homepage
-    get '/'
-  end
-end
+# class BrowsingTest < ActionDispatch::PerformanceTest
+#   # Refer to the documentation for all available options
+#   # self.profile_options = { :runs => 5, :metrics => [:wall_time, :memory]
+#   #                          :output => 'tmp/performance', :formats => [:flat] }
+
+#   def test_homepage
+#     get '/'
+#   end
+# end

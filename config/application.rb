@@ -51,7 +51,10 @@ module LibraryApp
     # This will create an empty whitelist of attributes available for mass-assignment for all models
     # in your app. As such, your models will need to explicitly whitelist or blacklist accessible
     # parameters by using an attr_accessible or attr_protected declaration.
-    config.active_record.whitelist_attributes = true
+
+    # TODO - ensure strong params are used
+    # https://carreno.me/articles/how-to-upgrade-to-strong-parameters-in-rails
+    #config.active_record.whitelist_attributes = true
 
     # Enable the asset pipeline
     config.assets.enabled = true

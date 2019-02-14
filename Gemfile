@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.22.5'
+ruby '2.3.0'
+
+gem 'rails', '~> 4.0'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg', '~> 0.21.0' # forced version. Rails hasn't released support for 1.0 yet 
