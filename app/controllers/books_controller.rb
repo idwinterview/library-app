@@ -2,7 +2,9 @@ class BooksController < ApplicationController
   before_action :set_customer
 
   def list
-    @customer_books = CustomerBook.where(customer_id: @customer.id)
+    @customer = Customer.preload(:customer_books, :books)
+                        .find_by(id: permitted_params[:customer_id])
+    @customer_books = @customer.customer_books
   end
 
   def returned
