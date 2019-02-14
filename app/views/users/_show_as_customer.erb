@@ -30,15 +30,15 @@
   		<% @customer_books.each do |customer_book| -%>
   			<tr class="<%= cycle("rowA", "rowB") -%>">
           <td><%= customer_book.created_at.to_date %></td>
-          <td><%= customer_book.book.title %></td>
-          <td><%= customer_book.book.author %></td>
+          <td><%= customer_book.bookable.title %></td>
+          <td><%= customer_book.bookable.author %></td>
           <td><%= customer_book.status %></td>
           <td>
             <% if customer_book.status == 'checked out' %>
     					<%= form_tag(returned_books_path) do %>
     						<%= hidden_field_tag :customer_id, @customer.id %>
     						<%= hidden_field_tag :id, customer_book.id %>
-    						<%= image_submit_tag("btn_reviewed.png", alt: "RETURNED", title: "RETURNED") %>						
+    						<%= image_submit_tag("btn_reviewed.png", alt: "RETURNED", title: "RETURNED") %>
     					<% end %>
             <% end -%>
           </td>
