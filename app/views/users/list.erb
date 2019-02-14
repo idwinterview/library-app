@@ -11,7 +11,7 @@
   			<th>Book Count</th>
   		</tr>
   		<% @customers.each do |customer| -%>
-  			<tr class="<%= cycle("rowA", "rowB") -%>">
+  			<tr class="<%= cycle("rowA", "rowB") -%><%= " customer-id-#{customer.id}" %>">
           <td><%= link_to "#{customer.first_name} #{customer.last_name}", user_path(customer, view: 'librarian') %></td>
           <td><%= book_count(customer) %></td>
         </tr>
