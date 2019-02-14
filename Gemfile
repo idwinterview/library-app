@@ -31,6 +31,7 @@ end
 group :test do
   gem 'simplecov', require: false, group: :test
   gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
