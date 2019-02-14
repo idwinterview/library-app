@@ -21,9 +21,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do 
+group :development, :test do
+  gem 'rspec-rails', '~> 3.5'
   gem 'pry'
   gem 'factory_bot_rails'
-  gem 'mocha'
   gem 'shoulda', '~> 3.5'
 end
+
+gem 'simplecov', require: false, group: :test
