@@ -28,4 +28,7 @@ group :development, :test do
   gem 'shoulda', '~> 3.5'
 end
 
-gem 'simplecov', require: false, group: :test
+group :test do
+  gem 'simplecov', require: false, group: :test
+  gem 'capybara'
+end
