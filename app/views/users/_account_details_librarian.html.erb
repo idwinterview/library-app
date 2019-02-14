@@ -29,7 +29,8 @@
 					</tr>
           <tr class="book-count-link-row">
             <td class="text-right">
-              <%= link_to "Book Count", list_books_path(customer_id: @customer.id) %>
+              <%= link_to "Book Count", list_books_path(customer_id: @customer.id,
+                view: 'librarian') %>
             </td>
             <td class="text-left">
               <span class="badge badge-pill badge-primary">

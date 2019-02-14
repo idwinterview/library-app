@@ -2,6 +2,7 @@ class BooksController < ApplicationController
   before_action :set_customer
 
   def list
+    @view = permitted_params[:view]
     @customer = Customer.preload(:customer_books, :books)
                         .find_by(id: permitted_params[:customer_id])
     @customer_books = @customer.customer_books
@@ -41,6 +42,6 @@ class BooksController < ApplicationController
   end
 
   def permitted_params
-    params.permit(:id, :customer_id)
+    params.permit(:id, :customer_id, :view)
   end
 end
