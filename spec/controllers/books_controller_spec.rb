@@ -15,18 +15,20 @@ describe BooksController do
 
       get :list, customer_id: customer.id
 
-      expect(assigns(:customer).is_a? Customer).to be_truthy
+      expect(assigns(:customer)).to eql(customer)
     end
 
     it 'assigns customer books' do
       customer = create(:customer)
-      book = create(:book)
-      create(:customer_book, customer_id: customer.id, bookable_id: book.id)
+      books = create_list(:book, 2)
+      customer.books << books
 
-      get :list, id: book.id, customer_id: customer.id
+      get :list, customer_id: customer.id
 
-      result = assigns(:customer_books).all? { |cb| cb.is_a? CustomerBook }
-      expect(result).to be_truthy
+      result = assigns(:customer_books)
+      expected = customer.books.map(&:customer_book)
+
+      expect(result).to match_array(expected)
     end
   end
 
@@ -54,6 +56,17 @@ describe BooksController do
         post :returned, id: book.id, customer_id: customer.id
 
         expect(flash[:success]).to eql("Book has been marked as returned.")
+      end
+
+      it 'assigns customer' do
+        customer = create(:customer)
+        book = create(:book)
+        customer_book = create(:customer_book, customer_id: customer.id, bookable_id: book.id, status: "checked out")
+
+        request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
+        post :returned, id: book.id, customer_id: customer.id
+
+        expect(assigns :customer).to eql(customer)
       end
     end
   end
