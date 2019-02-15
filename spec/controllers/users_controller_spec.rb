@@ -1,10 +1,12 @@
 require 'rails_helper'
 
 describe UsersController do
+  before :all do
+    @customer = create(:customer)
+  end
+
   context "#index" do
     it "renders the correct template" do
-      create(:customer)
-
       get :index
 
       expect(response).to render_template(:index)
@@ -12,41 +14,47 @@ describe UsersController do
   end
 
   context "#list" do
-    it "renders the correct template" do
-      create(:customer)
-
+    before :each do
       get :list
+    end
 
+    it "renders the correct template" do
       expect(response).to render_template(:list)
     end
 
     it "assign customers" do
-      customer = create(:customer)
-
-      get :list
-
       customers = assigns :customers
-      result = customers.include?(customer)
+      result = customers.include?(@customer)
 
       expect(result).to be_truthy
+    end
+
+    it "assigns view" do
+      expect(assigns(:view)).to eql('librarian')
     end
   end
 
   context "#show" do
+    # Could do this type of thing with before statements much more to save
+    # object creation where it isn't necessary (and also save lines of code)
+    before :all do
+      @customer = create(:customer)
+    end
+
+    before :each do
+      get :show, id: @customer.id
+    end
+
     it "renders the correct template" do
-      customer = create(:customer)
-
-      get :show, id: customer.id
-
       expect(response).to render_template(:show)
     end
 
     it "assigns customer" do
-      customer = create(:customer)
+      expect(assigns(:customer).id).to eql(@customer.id)
+    end
 
-      get :show, id: customer.id
-
-      expect(assigns(:customer).id).to eql(customer.id)
+    it "assigns view" do
+      expect(assigns(:view)).to eql('customer')
     end
   end
 end

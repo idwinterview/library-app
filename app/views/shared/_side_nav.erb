@@ -2,11 +2,11 @@
 <div class="floatLeft">
 	<div id="nav">
     <ul class="list-group">
-      <%= content_tag(:li, class: "list-group-item list-group-item-action") do  %>
-  			<%= link_to 'Librarian View', list_users_path %>
+      <%= content_tag(:li, class: "list-group-item list-group-item-action librarian-view") do  %>
+  			<%= link_to 'Librarian View', list_users_path, remote: true %>
       <% end %>
 
-      <%= content_tag(:li, class: "list-group-item list-group-item-action") do  %>
+      <%= content_tag(:li, class: "list-group-item list-group-item-action customer-view") do  %>
         <%# This will crash without customers in the database %>
   			<%= link_to 'Customer View', user_path(Customer.first, view: 'customer') %>
       <% end %>
@@ -15,11 +15,27 @@
 </div>
 
 <script>
+  function makeActive($element){
+    $element.addClass('selected');
+  }
+
+  function clearAllNavActive(){
+    $('.list-group-item').removeClass('selected');
+  }
   $(function() {
     // Make whole row clickable
     $('li').click(function(e){
       window.location = $(this).find('a').attr('href');
       return false;
     })
+
+    var view = '<%= @view %>'
+    if(view === 'librarian'){
+      makeActive($('.librarian-view'));
+    } else if (view === 'customer'){
+      makeActive($('.customer-view'));
+    } else {
+      $('.list-group-item').removeClass('selected');
+    }
   })
 </script>

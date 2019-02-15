@@ -4,11 +4,13 @@ class UsersController < ApplicationController
 
   def list
     set_customers
+    @view = 'librarian'
   end
 
   def show
     @customer = retrieve_customer
     @customer_books = @customer.customer_books
+    @view = 'customer'
   end
 
   private
