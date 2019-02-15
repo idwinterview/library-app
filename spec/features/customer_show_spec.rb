@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 feature 'Customer show page' do
-  it 'can check in the book' do
+  it 'shows books' do
     customer = create :customer
     customer.books << create_list(:book, 2)
 

@@ -12,4 +12,13 @@
     </ul>
   </div>
 </div>
-  
+
+<script>
+  $(function() {
+    // Make whole row clickable
+    $('li').click(function(e){
+      window.location = $(this).find('a').attr('href');
+      return false;
+    })
+  })
+</script>

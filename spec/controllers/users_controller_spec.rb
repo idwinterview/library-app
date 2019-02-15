@@ -40,5 +40,13 @@ describe UsersController do
 
       expect(response).to render_template(:show)
     end
+
+    it "assigns customer" do
+      customer = create(:customer)
+
+      get :show, id: customer.id
+
+      expect(assigns(:customer).id).to eql(customer.id)
+    end
   end
 end
