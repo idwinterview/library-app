@@ -52,3 +52,28 @@ You should see this same information.
 Please commit any updates and/or comments to the repo. Add any additional comments, notes and/or instructions in the README under the "Enhancements" section. Also note if the db/seeds.rb file has been updated. The development team will review your submission and be ready for the technical portion of your interview.
 
 ## Enhancements
+
+* Upgraded to Rails 4
+    * Removed deprecated config statements
+    * Incorporated strong params in both controllers
+    * Made other small changes as needed to get the app to spin up
+* Removed minitest
+* Added rspec, capybara, and launchy
+* Added bullet (n+1 detection)
+* Added simplecov for test coverage checking
+* Played with style a little
+    * Used Bootstrap 4 via CDN
+    * Didn't get too crazy -- kept same css file, did not make it scss
+    * If I were actually using bootstrap outside of a quick demo project like this:
+        * Would pull into the app asset flow via a gem or otherwise
+        * Would use scss files (would do this anyway on a rails project)
+        * Would override bootstrap properly instead of working my way around it (note the hacky use of a "selected" class for the side nav instead of the default "active" class to be able to use a different background color).
+    * Kept views the same, but smoothed them up a bit
+    * Added a check-in feature
+* Shored up test coverage
+* Broke the books up into audio and physical for the librarian view display
+* Tweaked factories a little to add some uniqueness to generated attributes
+
+General theme is that I cleaned things up, versus totally redesign them. Left the front end flows, left the controller flows. The front end work is quick and dirty... I'd much prefer to do it all in a framework. And even in lieu of a framework, it still wouldn't have all the html and partial reloads, instead, favoring json and piece-meal refreshing. But, I wanted to have a little fun with it, just the same.
+
+Thanks for the project, and I look forward to talking it through.
