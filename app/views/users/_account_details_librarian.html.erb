@@ -1,0 +1,54 @@
+<div id="featureWrap" class="floatLeft account-details-librarian">
+	<div class="card">
+		<div class="card-body">
+			<h3 class="card-title text-center">Account Details</h2>
+				<table class="table table-sm">
+					<tr>
+						<td class="text-right">
+							First Name
+						</td>
+						<td class="text-left">
+							<b><%= "#{@customer.first_name}" %></b>
+						</td>
+					</tr>
+          <tr>
+            <td class="text-right">
+              Last Name
+            </td>
+            <td class="text-left">
+              <b><%= "#{@customer.last_name}" %></b>
+            </td>
+          </tr>
+					<tr>
+						<td class="text-right">
+							Member Since
+						</td>
+						<td class="text-left">
+							<b><%= @customer.created_at.to_date %></b>
+						</td>
+					</tr>
+          <tr class="book-count-link-row">
+            <td class="text-right">
+              <%= link_to "Book Count", list_books_path(customer_id: @customer.id) %>
+            </td>
+            <td class="text-left">
+              <span class="badge badge-pill badge-primary">
+                <%= book_count(@customer) %>
+              </span>
+            </td>
+          </tr>
+				</table>
+		</div>
+	</div>
+
+</div>
+
+<script>
+  $(function() {
+    // Make whole row clickable
+    $('.book-count-link-row').click(function(e){
+      window.location = $(this).find('a').attr('href');
+      return false;
+    })
+  })
+</script>

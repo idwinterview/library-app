@@ -1,0 +1,26 @@
+<div id="featureWrap" class="floatLeft">
+	<div class="card">
+		<div class="card-body">
+			<h3 class="card-title text-center">Account Details</h2>
+				<table class="table table-sm">
+					<tr>
+						<td class="text-right">
+							Name
+						</td>
+						<td class="text-left">
+							<b><%= "#{@customer.first_name} #{@customer.last_name}" %></b>
+						</td>
+					</tr>
+					<tr>
+						<td class="text-right">
+							Member Since
+						</td>
+						<td class="text-left">
+							<b><%= @customer.created_at.to_date %></b>
+						</td>
+					</tr>
+				</table>
+		</div>
+	</div>
+
+</div>
