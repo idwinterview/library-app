@@ -19,6 +19,18 @@ class BooksController < ApplicationController
     redirect_to :back
   end
 
+  def check_out
+    customer_book = retrieve_customer_book
+
+    if customer_book.update(status: 'checked out')
+      flash[:success] = "Book has been marked as checked out."
+    else
+      flash[:error] = "Book could not be marked as checked out."
+    end
+
+    redirect_to :back
+  end
+
   private
   def set_customer
     @customer = Customer.find_by(id: permitted_params[:customer_id])

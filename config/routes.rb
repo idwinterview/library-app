@@ -11,6 +11,7 @@ LibraryApp::Application.routes.draw do
     collection do
       get :list
       post :returned
+      post :check_out
     end
   end
 end

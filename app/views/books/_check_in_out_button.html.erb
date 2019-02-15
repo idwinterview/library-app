@@ -1,0 +1,16 @@
+<% book = customer_book.bookable %>
+
+<% if book.checked_out? %>
+  <%= form_tag(returned_books_path) do %>
+  	<%= hidden_field_tag :customer_id, @customer.id %>
+  	<%= hidden_field_tag :id, book.id %>
+    <%= button_tag "Check In", class: 'badge badge-pill badge-success' %>
+  <% end %>
+
+<% else # book is not checked out %>
+  <%= form_tag(check_out_books_path) do %>
+    <%= hidden_field_tag :customer_id, @customer.id %>
+    <%= hidden_field_tag :id, book.id %>
+    <%= button_tag "Check Out", class: 'badge badge-pill badge-danger' %>
+  <% end %>
+<% end -%>
