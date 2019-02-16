@@ -25,7 +25,7 @@ RSpec.describe BooksController do
 
       get :list, id: book.id, customer_id: customer.id
 
-      expect(assigns(:customer_books)).to eq(customer_books)
+      expect(assigns(:customer_books)).to eq(CustomerBook.all)
     end
   end
 
