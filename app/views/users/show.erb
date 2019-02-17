@@ -1,1 +1,1 @@
-<%= render partial: "show_as_#{params[:view]}" %>
+<%= render partial: "show_as_#{current_user.downcase_type}" %>

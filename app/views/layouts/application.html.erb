@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-	<head>
   <head>
     <title>LibraryApp</title>
     <%= stylesheet_link_tag    "application", :media => "all" %>
@@ -10,10 +9,14 @@
 
 	<body>
 		<%= render :partial => 'shared/header' %>
-		
+
 		<div id="container">
-			<%= render :partial => 'shared/side_nav'%>
-				
+      <% flash.each do |type, message| %>
+        <div class="flash_<%= type %>">
+          <p><%= message %></p>
+        </div>
+      <% end %>
+
    		<%= yield %>
 
 			<div class="clear"></div>

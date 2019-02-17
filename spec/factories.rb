@@ -2,6 +2,8 @@ FactoryBot.define do
   factory :customer, class: Customer do
     first_name "John"
     last_name  "Doe"
+    email_address "john@example.com"
+    password "test1"
   end
 
   factory :customer_book  do
@@ -27,5 +29,13 @@ FactoryBot.define do
     isbn "ZZZZ9999"
     author "Jane Hero"
     category "Non Fiction"
+  end
+
+  factory :user do
+    first_name "Hank"
+    last_name  "Hill"
+    email_address "hank@example.com"
+    password "propane"
+    type "Customer"
   end
 end

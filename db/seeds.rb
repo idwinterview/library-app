@@ -1,6 +1,6 @@
-Librarian.create({first_name: 'Mrs', last_name: 'Books'})
-mr_incredible = Customer.create({first_name: 'Mr', last_name: 'Incredible'})
-mrs_incredible = Customer.create({first_name: 'Mrs', last_name: 'Incredible'})
+Librarian.create({first_name: 'Mrs', last_name: 'Books', email_address: 'brooks@example.com', password_digest: BCrypt::Password.create('ilovebooks')})
+mr_incredible = Customer.create({first_name: 'Mr', last_name: 'Incredible', email_address: 'mri@example.com', password_digest: BCrypt::Password.create('super')})
+mrs_incredible = Customer.create({first_name: 'Mrs', last_name: 'Incredible', email_address: 'mrsi@example.com', password_digest: BCrypt::Password.create('elastigirl')})
 
 rails = PhysicalBook.create(isbn: '0470081201', title: "Ruby on Rails For Dummies", author: 'Barry A. Burd', category: 'technology')
 javascript = AudioBook.create(isbn: '0764506331', title: 'JavaScript For Dummies', author: 'Emily A. Vander Veer', category: 'technology')

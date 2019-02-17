@@ -3,5 +3,13 @@
   <div id="heading">
 		Library Application
   </div>
+
+  <div class="sign_in">
+    <% if current_user.present? %>
+      <%= link_to "Sign Out", sign_out_path %>
+    <% else %>
+      <%= link_to "Sign In", sign_in_path %>
+    <% end %>
+  </div>
 </div>
 <!-- End MASTHEAD -->

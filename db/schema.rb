@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20180523144616) do
+ActiveRecord::Schema.define(:version => 20190216232341) do
 
   create_table "books", :force => true do |t|
     t.string   "type",       :limit => 20
@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(:version => 20180523144616) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "type",       :limit => 10
-    t.string   "first_name", :limit => 50
-    t.string   "last_name",  :limit => 50
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "type",            :limit => 10
+    t.string   "first_name",      :limit => 50
+    t.string   "last_name",       :limit => 50
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
+    t.string   "email_address"
+    t.string   "password_digest"
   end
 
 end

@@ -5,6 +5,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg', '~> 0.21.0' # forced version. Rails hasn't released support for 1.0 yet
 gem 'test-unit', '~> 3.0'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
 
 # Gems used only for assets and not required
