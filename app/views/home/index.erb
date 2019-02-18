@@ -1,2 +1,19 @@
 <h1>Welcome to the Library</h1>
 <p>Sign in and explore.</p>
+<br>
+
+<div id="featureWrap" class="floatLeft reports">
+  <h2>Take a look at our new books!</h2>
+  <table class="report" cellpadding="0" cellspacing="0">
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+    </tr>
+    <% @books.each do |book| %>
+      <tr>
+        <td><%= book.title %></td>
+        <td><%= book.author %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
