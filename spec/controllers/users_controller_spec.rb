@@ -1,16 +1,6 @@
 require "rails_helper"
 
 RSpec.describe UsersController do
-  context "#index" do
-    it "renders the correct template" do
-      create(:customer)
-
-      get :index
-
-      expect(response).to render_template(:index)
-    end
-  end
-
   context "#list" do
     it "renders the correct template" do
       create(:customer)

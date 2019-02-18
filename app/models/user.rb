@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
   def downcase_type
     type.downcase
   end
+
+  def librarian?
+    type == "Librarian"
+  end
 end

@@ -38,4 +38,11 @@ FactoryBot.define do
     password "propane"
     type "Customer"
   end
+
+  factory :librarian, class: Librarian do
+    first_name "Grace"
+    last_name  "Hopper"
+    email_address "grace@example.com"
+    password "bookworm"
+  end
 end

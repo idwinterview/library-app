@@ -5,13 +5,14 @@ LibraryApp::Application.routes.draw do
   post '/sign_in', to: 'sessions#create'
   get '/sign_out', to: 'sessions#destroy'
 
-  resources :users do
-    collection do
-      get :list
-    end
+  namespace :librarian do
+    get 'dashboard', to: 'dashboard#dashboard'
+    resources :users, only: [:show]
   end
 
-  resources :books do
+  resources :users, only: [:show]
+
+  resources :books, only: [:list, :returned] do
     collection do
       get :list
       post :returned
