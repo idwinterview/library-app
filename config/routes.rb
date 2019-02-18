@@ -16,10 +16,11 @@ LibraryApp::Application.routes.draw do
 
   resources :users, only: [:show]
 
-  resources :books, only: [:list, :returned] do
+  resources :books, only: [:list, :returned, :show, :index] do
     collection do
       get :list
       post :returned
     end
+    resources :reviews, only: [:new, :create]
   end
 end

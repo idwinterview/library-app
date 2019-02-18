@@ -1,0 +1,5 @@
+<div class="review">
+  <p class="review-title">Review by <%= review.author_name %>:</p>
+  <p class="review-body"><%= review.body %></p>
+  <p class="review-date">Posted <%= distance_of_time_in_words(DateTime.now, review.created_at) %> ago</p>
+</div>

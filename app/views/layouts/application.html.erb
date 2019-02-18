@@ -12,7 +12,9 @@
 
 		<div id="container">
       <% if current_admin? %>
-        <%= render :partial => 'shared/librarian_side_nav' %>
+        <%= render partial: 'shared/librarian_side_nav' %>
+      <% else %>
+        <%= render partial: 'shared/side_nav' %>
       <% end %>
 
       <% flash.each do |type, message| %>

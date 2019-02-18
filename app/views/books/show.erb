@@ -1,0 +1,28 @@
+<div id="feature" class="floatLeft">
+  <div id="featureHeading">
+    <h1 class="floatLeft"><%= @book.title %></h1>
+    <div class="clear"></div>
+  </div>
+
+  <div id="featureWrap" class="floatLeft reports">
+  	<table class="report" cellpadding="0" cellspacing="0">
+  		<tr>
+  			<th>Author</th>
+        <th>Type</th>
+        <th>Category</th>
+  		</tr>
+  		<tr>
+        <td><%= @book.author %></td>
+        <td><%= @book.type %></td>
+        <td><%= @book.category %></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="clear"></div>
+  <div id="featureWrap">
+    <h3>Reviews (<%= @book.reviews.size %>)</h3>
+    <%= render partial: 'books/review', collection: @book.reviews.reverse %>
+    <%= render partial: 'reviews/form' %>
+  </div>
+</div>
