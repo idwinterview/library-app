@@ -7,7 +7,11 @@ LibraryApp::Application.routes.draw do
 
   namespace :librarian do
     get 'dashboard', to: 'dashboard#dashboard'
-    resources :users, only: [:show]
+    resources :users, only: [:show, :customer_books_report] do
+      collection do
+        get :customer_books_report
+      end
+    end
   end
 
   resources :users, only: [:show]

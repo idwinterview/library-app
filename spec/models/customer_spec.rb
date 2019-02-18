@@ -67,4 +67,24 @@ RSpec.describe Customer, type: :model do
       end
     end
   end
+
+  describe "#audio_book_count" do
+    it "totals the number of audio books" do
+      customer = create(:customer)
+      audio_book = create(:book, type: "AudioBook")
+      create(:customer_book, customer_id: customer.id, book_id: audio_book.id)
+
+      expect(customer.audio_book_count).to eq(1)
+    end
+  end
+
+  describe "#physical_book_count" do
+    it "totals the number of physical books" do
+      customer = create(:customer)
+      physical_book = create(:book, type: "PhysicalBook")
+      create(:customer_book, customer_id: customer.id, book_id: physical_book.id)
+
+      expect(customer.physical_book_count).to eq(1)
+    end
+  end
 end

@@ -1,0 +1,34 @@
+<div id="feature" class="floatLeft">
+  <div id="featureHeading">
+    <h1 class="floatLeft">Customer Books Report</h1>
+    <div class="clear"></div>
+  </div>
+
+  <div id="featureWrap" class="floatLeft reports">
+  	<table class="report" cellpadding="0" cellspacing="0">
+  		<tr>
+  			<th>Customer</th>
+  			<th>Physical Book Count</th>
+        <th>Physical Books</th>
+  			<th>Audio Book Count</th>
+        <th>Audio Books</th>
+  		</tr>
+  		<% @customers.each do |customer| -%>
+  			<tr class="<%= cycle("rowA", "rowB") -%>">
+          <td><%= link_to "#{customer.first_name} #{customer.last_name}", librarian_user_path(customer) %></td>
+          <td><%= customer.physical_book_count %></td>
+          <td>
+            <% customer.physical_books.each do |physical_book| %>
+              <%= physical_book.title %>
+            <% end %>
+          </td>
+          <td><%= customer.audio_book_count %></td>
+          <td>
+            <% customer.audio_books.each do |audio_book| %>
+              <%= audio_book.title %>
+            <% end %>
+          </td>
+        </tr>
+      <% end -%>
+  </div>
+</div>

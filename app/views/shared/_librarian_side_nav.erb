@@ -1,0 +1,13 @@
+<!-- NAVIGATION -->
+<div class="floatLeft">
+	<div id="nav">
+    <ul>
+      <%= content_tag(:li) do  %>
+  			<%= link_to 'Librarian Dashboard', librarian_dashboard_path %>
+      <% end %>
+      <%= content_tag(:li) do  %>
+  			<%= link_to 'Customer Book Report', customer_books_report_librarian_users_path %>
+      <% end %>
+    </ul>
+  </div>
+</div>

@@ -11,6 +11,10 @@
 		<%= render :partial => 'shared/header' %>
 
 		<div id="container">
+      <% if current_admin? %>
+        <%= render :partial => 'shared/librarian_side_nav' %>
+      <% end %>
+
       <% flash.each do |type, message| %>
         <div class="flash_<%= type %>">
           <p><%= message %></p>
