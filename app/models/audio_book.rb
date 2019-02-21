@@ -1,3 +1,2 @@
 class AudioBook < Book
-  
 end

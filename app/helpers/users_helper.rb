@@ -1,9 +1,15 @@
 module UsersHelper
   include ApplicationHelper
-  
-  
+
   def book_count(customer)
-    books = CustomerBook.where("customer_id = #{customer.id}")
-    books.size
+    customer.books.count
+  end
+
+  def audio_book_count(customer)
+    customer.audio_books.count
+  end
+
+  def physical_book_count(customer)
+    customer.physical_books.count
   end
 end
