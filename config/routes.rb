@@ -1,5 +1,4 @@
 LibraryApp::Application.routes.draw do
-  match '' => 'users#index', :as => 'home'
   
   resources :users do
     collection do

@@ -1,4 +1,4 @@
-class CreateBooks < ActiveRecord::Migration
+class CreateBooks < ActiveRecord::Migration[6.1]
   def up
     create_table :books, :force => true do |t|
       t.column :type, :string, limit: 20

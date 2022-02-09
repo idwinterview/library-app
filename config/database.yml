@@ -2,7 +2,7 @@ development:
  adapter: postgresql
  database: library_app
  username: postgres
- password:
+ password: postgres
  host: 127.0.0.1
  
  
@@ -10,5 +10,5 @@ test:
  adapter: postgresql
  database: library_app_test
  username: postgres
- password:
+ password: postgres
  host: 127.0.0.1
