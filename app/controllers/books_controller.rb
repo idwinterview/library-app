@@ -16,6 +16,6 @@ class BooksController < ApplicationController
       flash[:error] = "Book could not be marked as returned."
     end
     
-    redirect_to :back
+    redirect_to list_books_path(customer_id: @customer.id)
   end
 end
