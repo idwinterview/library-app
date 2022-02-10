@@ -1,4 +1,4 @@
-class CreateCustomerBooks < ActiveRecord::Migration
+class CreateCustomerBooks < ActiveRecord::Migration[6.1]
   def up
     create_table :customer_books, :force => true do |t|
       t.column :customer_id, :integer

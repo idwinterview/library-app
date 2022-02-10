@@ -33,7 +33,7 @@ class UsersControllerTest < ActionController::TestCase
     should "render the correct template" do 
       customer = create(:customer)
 
-      get :show, id: customer.id
+      get :show, params: {id: customer.id}
 
       assert_template :show
     end

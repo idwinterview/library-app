@@ -1,31 +1,35 @@
+$LOAD_PATH << File.dirname(__FILE__) + "/.."
+
+require 'factory_bot'
+
 FactoryBot.define do
-  factory :customer, class: Customer do
-    first_name "John"
-    last_name  "Doe"
+  factory :customer, class: Customer do |c|
+    c.first_name { "John" }
+    c.last_name  { "Doe" }
   end
 
-  factory :customer_book  do 
-    status "checked out"
+  factory :customer_book  do |cb|
+    cb.status { "checked out" }
   end
 
-  factory :book do 
-    title "A Fancy Title"
-    isbn "ABC1112233"
-    author "Jane Smith"
-    category "Fiction"
+  factory :book do |b|
+    b.title { "A Fancy Title" }
+    b.isbn { "ABC1112233" }
+    b.author { "Jane Smith" }
+    b.category { "Fiction" }
   end
 
-  factory :audio_book, class: AudioBook do 
-    title "A Fancy Audio Book"
-    isbn "XXXX144444"
-    author "Jane Smith"
-    category "Non Fiction"
+  factory :audio_book, class: AudioBook do |ab|
+    ab.title { "A Fancy Audio Book" }
+    ab.isbn { "XXXX144444" }
+    ab.author { "Jane Smith" }
+    ab.category { "Non Fiction" }
   end
 
-  factory :physical_book, class: PhysicalBook do 
-    title "A Physical Books"
-    isbn "ZZZZ9999"
-    author "Jane Hero"
-    category "Non Fiction"
+  factory :physical_book, class: PhysicalBook do |pb|
+    pb.title { "A Physical Books" }
+    pb.isbn { "ZZZZ9999" }
+    pb.author { "Jane Hero" }
+    pb.category { "Non Fiction" }
   end
 end

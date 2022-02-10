@@ -1,11 +1,12 @@
 require "test_helper"
+require 'mocha/mini_test'
 
 class BooksControllerTest < ActionController::TestCase
   context "#list" do 
     should "render the correct template" do 
       customer = create(:customer)
 
-      get :list, customer_id: customer.id
+      get :list, params: {customer_id: customer.id}
 
       assert_template :list
     end
@@ -13,7 +14,7 @@ class BooksControllerTest < ActionController::TestCase
     should "assign customer" do 
       customer = create(:customer)
 
-      get :list, customer_id: customer.id
+      get :list, params: {customer_id: customer.id}
 
       assert assigns(:customer)
     end
@@ -23,7 +24,7 @@ class BooksControllerTest < ActionController::TestCase
       book = create(:book)
       create(:customer_book, customer_id: customer.id, book_id: book.id)
 
-      get :list, id: book.id, customer_id: customer.id
+      get :list, params: {id: book.id, customer_id: customer.id}
 
       assert assigns(:customer_books)
     end
@@ -37,7 +38,7 @@ class BooksControllerTest < ActionController::TestCase
         customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
-        post :returned, id: book.id, customer_id: customer.id
+        post :returned, params: {id: book.id, customer_id: customer.id}
 
         customer_book.reload
 
@@ -50,7 +51,7 @@ class BooksControllerTest < ActionController::TestCase
         customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
-        post :returned, id: book.id, customer_id: customer.id
+        post :returned, params: {id: book.id, customer_id: customer.id}
 
         assert_equal "Book has been marked as returned.", flash[:success]
       end
@@ -65,7 +66,7 @@ class BooksControllerTest < ActionController::TestCase
         CustomerBook.any_instance.expects(:save).returns(false)
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
-        post :returned, id: book.id, customer_id: customer.id
+        post :returned, params: {id: book.id, customer_id: customer.id}
 
         customer_book.reload
 
@@ -80,7 +81,7 @@ class BooksControllerTest < ActionController::TestCase
         CustomerBook.any_instance.expects(:save).returns(false)
 
         request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)
-        post :returned, id: book.id, customer_id: customer.id
+        post :returned, params: {id: book.id, customer_id: customer.id}
 
         customer_book.reload
 
@@ -94,7 +95,7 @@ class BooksControllerTest < ActionController::TestCase
       customer_book = create(:customer_book, customer_id: customer.id, book_id: book.id, status: "checked out")
 
       request.env["HTTP_REFERER"] = list_books_path(customer_id: customer.id)     
-      post :returned, id: book.id, customer_id: customer.id
+      post :returned, params: {id: book.id, customer_id: customer.id}
 
       assert_redirected_to list_books_path(customer_id: customer.id)     
     end
