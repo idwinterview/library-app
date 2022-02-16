@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_16_174033) do
+ActiveRecord::Schema.define(version: 2022_02_16_200747) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,16 +26,16 @@ ActiveRecord::Schema.define(version: 2022_02_16_174033) do
   end
 
   create_table "customer_books", force: :cascade do |t|
-    t.integer "customer_id"
-    t.integer "book_id"
+    t.bigint "book_id"
+    t.bigint "user_id"
     t.string "status", limit: 15, default: "checked out"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_customer_books_on_book_id"
+    t.index ["user_id"], name: "index_customer_books_on_user_id"
   end
 
   create_table "customers", force: :cascade do |t|
-    t.string "first_name"
-    t.string "last_name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -48,4 +48,6 @@ ActiveRecord::Schema.define(version: 2022_02_16_174033) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "customer_books", "books"
+  add_foreign_key "customer_books", "users"
 end

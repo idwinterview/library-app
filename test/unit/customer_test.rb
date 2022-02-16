@@ -5,7 +5,7 @@ class Customertest < ActiveSupport::TestCase
     context "#customer_books" do
       should "have many customer books" do
         customer = create(:customer)
-        create_list(:customer_book, 2, customer_id: customer.id)
+        create_list(:customer_book, 2, user_id: customer.id)
 
 
         assert_equal 2, customer.customer_books.size
@@ -14,11 +14,9 @@ class Customertest < ActiveSupport::TestCase
 
     context "#books" do
       should "have many books" do
-        # FIX ME I am broken
         customer = create(:customer)
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-
+        create(:customer_book, user_id: customer.id, book_id: create(:book).id)
+        create(:customer_book, user_id: customer.id, book_id: create(:book).id)
         assert_equal 2, customer.books.size
       end
     end
