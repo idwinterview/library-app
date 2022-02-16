@@ -19,10 +19,11 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-group :development, :test do 
-  gem 'byebug', '9.0.6' #forced version 
+group :development, :test do
+  gem 'byebug', '9.0.6' #forced version
   gem 'factory_bot_rails'
-  gem 'mocha', '1.3.0' #forced version 
+  gem 'mocha', '1.3.0' #forced version
   gem 'shoulda', '~> 3.5'
   gem 'rails-controller-testing'
+  gem 'pry'
 end
