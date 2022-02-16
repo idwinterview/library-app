@@ -1,35 +1,39 @@
 require "test_helper"
 
 class Customertest < ActiveSupport::TestCase
+  setup do
+    @customer = create(:customer)
+  end
   context "associations" do
     context "#customer_books" do
       should "have many customer books" do
-        customer = create(:customer)
-        create_list(:customer_book, 2, user_id: customer.id)
+        # customer = create(:customer)
+        create_list(:customer_book, 2, user_id: @customer.id)
 
 
-        assert_equal 2, customer.customer_books.size
+        assert_equal 2, @customer.customer_books.size
       end
     end
 
     context "#books" do
       should "have many books" do
-        customer = create(:customer)
-        create(:customer_book, user_id: customer.id, book_id: create(:book).id)
-        create(:customer_book, user_id: customer.id, book_id: create(:book).id)
-        assert_equal 2, customer.books.size
+        create(:customer_book, user_id: @customer.id, book_id: create(:book).id)
+        create(:customer_book, user_id: @customer.id, book_id: create(:book).id)
+        assert_equal 2, @customer.books.size
       end
     end
 
     context "audio_books" do
       should "have many audio books" do
-        # TODO: Please Add
+        create(:customer_book, user_id: @customer.id, book_id: create(:audio_book).id)
+        assert_equal "AudioBook", @customer.books.first.type
       end
     end
 
     context "physical_books" do
       should "have many physical books" do
-        # TODO: Please Add
+        create(:customer_book, user_id: @customer.id, book_id: create(:physical_book).id)
+        assert_equal "PhysicalBook", @customer.books.first.type
       end
     end
   end
