@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ActiveRecord::Base
   has_many(:customer_books, dependent: :destroy)
   has_many :books, through: :customer_books

@@ -1,17 +1,18 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 
-gem 'rails', '~> 6.1'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
+gem 'rails', '~> 6.1'
 gem 'test-unit', '~> 3.0'
-
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails'
   gem 'coffee-rails'
+  gem 'sass-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
@@ -20,18 +21,19 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'byebug', '9.0.6' #forced version
+  gem 'byebug', '9.0.6' # forced version
   gem 'factory_bot_rails'
-  gem 'mocha', '1.3.0' #forced version
+  gem 'faker'
+  gem 'mocha', '1.3.0' # forced version
+  gem 'pry'
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
+  gem 'rubocop-rails'
   gem 'shoulda', '~> 3.5'
   gem 'shoulda-matchers'
-  gem 'rails-controller-testing'
-  gem 'pry'
-  gem 'rspec-rails'
-  gem 'faker'
 end
 
 group :test do
-  gem 'launchy'
   gem 'capybara'
+  gem 'launchy'
 end

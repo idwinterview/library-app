@@ -1,14 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+
 development:
- adapter: postgresql
- database: library_app
- username: postgres
- password: postgres
- host: 127.0.0.1
- 
- 
+  <<: *default
+  database: library_app
+
+
 test:
- adapter: postgresql
- database: library_app_test
- username: postgres
- password: postgres
- host: 127.0.0.1
+  <<: *default
+  database: library_app_test
