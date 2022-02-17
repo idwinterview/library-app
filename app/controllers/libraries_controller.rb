@@ -2,7 +2,7 @@
 # above line improves memory usage and speed of app
 class LibrariesController < ApplicationController
   def index
-    @library = Library.where(id: params['library_id'])
+    @library = LibraryService.find_library(params)
   end
 
   # def returned

@@ -20,4 +20,12 @@ class LibraryService
       flash_message[:error] = 'Book could not be marked as returned.'
     end
   end
+
+  def self.find_library(params)
+    if params['library_id']
+      Library.where(id: params['library_id'])
+    else
+      Library.first
+    end
+  end
 end
