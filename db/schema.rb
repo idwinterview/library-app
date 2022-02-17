@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_02_17_184025) do
+ActiveRecord::Schema.define(version: 2022_02_17_210544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,6 +40,13 @@ ActiveRecord::Schema.define(version: 2022_02_17_184025) do
     t.index ["library_id"], name: "index_books_on_library_id"
   end
 
+  create_table "counties", force: :cascade do |t|
+    t.string "name"
+    t.string "zip_code"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "customer_books", force: :cascade do |t|
     t.bigint "book_id"
     t.bigint "user_id"
@@ -57,6 +64,8 @@ ActiveRecord::Schema.define(version: 2022_02_17_184025) do
     t.string "phone_number"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "county_id"
+    t.index ["county_id"], name: "index_libraries_on_county_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -74,5 +83,6 @@ ActiveRecord::Schema.define(version: 2022_02_17_184025) do
   add_foreign_key "customer_books", "books"
   add_foreign_key "customer_books", "libraries"
   add_foreign_key "customer_books", "users"
+  add_foreign_key "libraries", "counties"
   add_foreign_key "users", "libraries"
 end

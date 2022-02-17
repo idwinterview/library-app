@@ -1,5 +1,6 @@
 # frozen_string_literal: true
-library = Library.create!(name: 'Bear Creek Library', phone_number: '222-333-1234')
+county = County.create!(name: 'Jefferson County', zip_code: '99988')
+library = Library.create!(name: 'Bear Creek Library', phone_number: '222-333-1234', county_id: county.id)
 
 Address.create!(number: '123', street: 'South Road', second_address_line: '#203', zip: 99988, state: 'NY', library_id: library.id)
 
@@ -17,3 +18,4 @@ harry_potter = PhysicalBook.create(isbn: '0439708184', title: "Harry Potter and 
 CustomerBook.create(user_id: mrs_incredible.id, book_id: rails.id, library_id: library.id)
 CustomerBook.create(user_id: mr_incredible.id, book_id: javascript.id, library_id: library.id)
 CustomerBook.create(user_id: mr_incredible.id, book_id: harry_potter.id, library_id: library.id)
+require "pry"; binding.pry

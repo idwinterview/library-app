@@ -1,6 +1,7 @@
 class Library < ActiveRecord::Base
   validates_presence_of :name, :phone_number
   validates_uniqueness_of :name, :phone_number
+  belongs_to :county
   has_one :address
   has_many :books
   has_many :customers

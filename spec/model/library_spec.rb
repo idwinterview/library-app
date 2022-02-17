@@ -9,6 +9,7 @@ RSpec.describe Library, type: :model do
   end
 
   describe 'relationships' do
+    it { should belong_to :county }
     it { should have_one :address }
     it { should have_many :books }
     it { should have_many :customers }

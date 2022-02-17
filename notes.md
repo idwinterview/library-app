@@ -34,10 +34,14 @@
 
 ## Nice to have's
 
-1. Login page
-2. Landing page
-3. ~Library home page~
-4. Page to see all books, as a librarian, and their status
+1. ~Tie `Book` to `Library`~
+2. Login page
+3. Landing page
+4. ~Library home page~
+5. Page to see all books, as a librarian, and their status
+6. ~Add `County`, tie each `Library` to a `County`~
+7. ~Give `Library` an address~
+8. ~Create `Address`, tie it to `Library`~
 
 ## Comments
 
