@@ -35,8 +35,9 @@
 ## Nice to have's
 
 1. Login page
-2. ~Home page~
-3. Page to see all books, as a librarian, and their status
+2. Landing page
+3. ~Library home page~
+4. Page to see all books, as a librarian, and their status
 
 ## Comments
 
