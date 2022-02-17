@@ -11,20 +11,13 @@ class BooksController < ApplicationController
   end
 
   def returned
-    @customer = Customer.find(params[:user_id])
-    book = CustomerBook.where(['book_id = ? and user_id = ?', params[:id], params[:user_id]]).first
-    book.status = 'returned'
-
-    if book.save
-      flash[:success] = 'Book has been marked as returned.'
-    else
-      flash[:error] = 'Book could not be marked as returned.'
-    end
+    @customer = User.define_user(params[:user_id])
+    LibraryService.return_book({customer: @customer, book_id: params[:id], flash: flash})
 
     redirect_to list_books_path(user_id: @customer.id)
   end
 
   def show
-    @book = Book.find(params['id'])
+    @book = LibraryService.find_book(params['id'])
   end
 end
