@@ -1,0 +1,7 @@
+<div id="feature" class="floatLeft">
+  <div id="featureHeading">
+    <h1 class="floatLeft"><%= link_to @library.name, library_path(@library, view: 'customer') %></h1>
+    <div class="clear"></div>
+  </div>
+
+  <%= render partial: 'shared/flash' %>

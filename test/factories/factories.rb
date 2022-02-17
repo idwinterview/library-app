@@ -6,6 +6,11 @@ require 'factory_bot'
 require 'faker'
 
 FactoryBot.define do
+  factory :library, class: Library do |c|
+    c.name { 'Bear Creek Library' }
+    c.phone_number { '222-3398' }
+  end
+
   factory :customer, class: Customer do |c|
     c.first_name { 'John' }
     c.last_name  { 'Doe' }

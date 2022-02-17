@@ -13,4 +13,10 @@ LibraryApp::Application.routes.draw do
       post :returned
     end
   end
+
+  resources :libraries do
+    collection do
+      get :list
+    end
+  end
 end
