@@ -25,7 +25,7 @@ The db/seeds.rb file is preloaded with test data. Please use this when you setup
 *		Review the test suite for any gaps.
 *		Build a new report that lists customers with a count of different types of books.
 *		Build an import process to retrieve new books from a file.
-*		Build a process to review new books and deliver then to the customer.
+*		Build a process to review new books and deliver them to the customer.
 
 ## Extra Credit:
 

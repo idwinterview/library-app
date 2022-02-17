@@ -17,8 +17,7 @@ LibraryApp::Application.routes.draw do
   resources :libraries do
     collection do
       get :list
+      get :show
     end
   end
-
-  root to: 'main#index'
 end

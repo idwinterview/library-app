@@ -32,14 +32,20 @@
 
 11. Added landing page, displays library's name.
 
-## Possible improvements
+## Nice to have's
 
-1.
+1. Login page
+2. ~Home page~
+3. Page to see all books, as a librarian, and their status
 
 ## Comments
+
+- I named the branch 'refactor', which was true at first but not as I continued to make improvements / changes. Typically I'd submit one PR for the refactoring, then make another branch for each of the other features. This is assuming I'd be using feature branching, rather than trunk based development.
 
 - Haven't used Minitest in a long time, never used Test Case, never used Mocha.
 
 - Not ideal to have two different testing suites, but I didn't want to spend too much time on re-learning Minitest, RSpec is what I use on a weekly basis.
 
--
+- There was a typo on the README.rdoc, I fixed it.
+
+- I used Rubocop as a guide for following best practices. It's never meant as a crutch, but it is nice to have.
