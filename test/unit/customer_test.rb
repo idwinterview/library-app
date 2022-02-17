@@ -7,7 +7,6 @@ class Customertest < ActiveSupport::TestCase
   context "associations" do
     context "#customer_books" do
       should "have many customer books" do
-        # customer = create(:customer)
         create_list(:customer_book, 2, user_id: @customer.id)
 
 

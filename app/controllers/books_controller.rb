@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
 
   def list
+
     @customer = Customer.where(["id = ?", params[:user_id]]).first
+    # @customer_books = CustomerBook.where(user_id: @customer.id)
     @customer_books = CustomerBook.where(["user_id = ?", params[:user_id]])
   end
 

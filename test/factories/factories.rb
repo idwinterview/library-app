@@ -1,11 +1,17 @@
 $LOAD_PATH << File.dirname(__FILE__) + "/.."
 
 require 'factory_bot'
+require 'faker'
 
 FactoryBot.define do
   factory :customer, class: Customer do |c|
     c.first_name { "John" }
     c.last_name  { "Doe" }
+  end
+
+  factory :librarian, class: Librarian do |c|
+    c.first_name { Faker::Name.first_name }
+    c.last_name { Faker::Name.last_name }
   end
 
   factory :customer_book  do |cb|

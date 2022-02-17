@@ -28,4 +28,6 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'pry'
   gem 'rspec-rails'
+  gem 'capybara'
+  gem 'faker'
 end
