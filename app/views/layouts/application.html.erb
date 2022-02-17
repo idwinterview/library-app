@@ -9,10 +9,10 @@
   </head>
 
 	<body>
-			<%= render :partial => 'shared/header' %>
+			<%= render :partial => 'shared/header' if @show_header %>
 
 			<div id="container">
-				<%= render :partial => 'shared/side_nav'%>
+				<%= render :partial => 'shared/side_nav' if @show_side_nav %>
 
 	   		<%= yield %>
 

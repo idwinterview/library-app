@@ -18,7 +18,23 @@
 
 4. Changed attribute 'customer_id' to 'user_id' in `customer_books` table. Had issues creating relationship between `Customer` and `Book`, this solved it. Isn't ideal to change an attribute in a table.
 
-5. 
+5. Added foreign keys `books` and `users` references for `customer_books`.
+
+6. Added functionality in controller, allowing a librarian to see _all_ `CustomerBook`'s in '/books/list'
+
+7. Added `define_user()` method for `User`. Method takes in an ID and searches `User`, rather than `Librarian` or `Customer`. This was added because the previous method in the `BooksController` only searched `Customer`. This allows for the eventual feature of allowing a librarian to see _all_ books that are being used by customers, as well as limiting the views a customer can see.
+
+8. Added a `LibraryService` class to abstract the function of finding and returning a book, as well as delivering a flash message.
+
+9. Added a `Library` model. The library has a name, phone number, customers, books, an address and librarians.
+
+10. Added an `Address` model for `Library`
+
+11. Added landing page, displays library's name.
+
+## Possible improvements
+
+1.
 
 ## Comments
 

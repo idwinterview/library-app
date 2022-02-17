@@ -19,4 +19,6 @@ LibraryApp::Application.routes.draw do
       get :list
     end
   end
+
+  root to: 'main#index'
 end
