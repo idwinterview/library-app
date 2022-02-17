@@ -10,4 +10,14 @@ RSpec.describe User, type: :model do
     it { should have_many :customer_books }
     it { should have_many(:books).through(:customer_books) }
   end
+
+  describe 'methods' do
+    it '#define_user()' do
+      customer = Customer.create!(first_name: "George", last_name: "Hammel")
+      librarian = Librarian.create!(first_name: "Hammy", last_name: "Todd")
+
+      expect(User.define_user(customer.id)).to be_a(Customer)
+      expect(User.define_user(librarian.id)).to be_a(Librarian)
+    end
+  end
 end

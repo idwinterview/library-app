@@ -27,14 +27,6 @@ class UsersControllerTest < ActionController::TestCase
 
       assert assigns(:customers)
     end
-
-    # should "assign librarians" do
-    #   create(:librarian)
-    #
-    #   get :list
-    #
-    #   assert assigns(:librarians)
-    # end
   end
 
   context "#show" do

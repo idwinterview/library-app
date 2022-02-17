@@ -4,4 +4,12 @@ class User < ActiveRecord::Base
   has_many(:audio_books)
   has_many(:physical_books)
   validates_presence_of :first_name, :last_name
+
+  def self.define_user(id)
+    if id
+      User.find(id)
+    else
+      User.where("type NOT like 'Librarian'").first
+    end
+  end
 end

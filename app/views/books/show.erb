@@ -1,0 +1,26 @@
+<div id="feature" class="floatLeft">
+  <div id="featureHeading">
+    <h1 class="floatLeft"><%= @book.title %></h1>
+    <div class="clear"></div>
+  </div>
+
+  <%= render partial: 'shared/flash' %>
+
+  <div id="featureWrap" class="floatLeft reports">
+  	<table class="report" cellpadding="0" cellspacing="0">
+  		<tr>
+  			<th>Title</th>
+  			<th>ISBN Number</th>
+  			<th>Author</th>
+  			<th>Category</th>
+        <th>Description</th>
+  		</tr>
+  			<tr class="<%= cycle("rowA", "rowB") -%>">
+          <td><%= @book.title %></td>
+          <td><%= @book.isbn %></td>
+          <td><%= @book.author  %></td>
+          <td><%= @book.category %></td>
+          <td><%= @book.description %></td>
+        </tr>
+  </div>
+</div>

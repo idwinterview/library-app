@@ -1,10 +1,13 @@
 class BooksController < ApplicationController
 
   def list
-
-    @customer = Customer.where(["id = ?", params[:user_id]]).first
-    # @customer_books = CustomerBook.where(user_id: @customer.id)
-    @customer_books = CustomerBook.where(["user_id = ?", params[:user_id]])
+    @customer = User.define_user(params[:user_id])
+    # @customer = Customer.where(["id = ?", params[:user_id]])
+    if @customer.class == Librarian
+      @customer_books = CustomerBook.all
+    else
+      @customer_books = CustomerBook.where(["user_id = ?", @customer.id])
+    end
   end
 
   def returned
@@ -19,5 +22,9 @@ class BooksController < ApplicationController
     end
 
     redirect_to list_books_path(user_id: @customer.id)
+  end
+
+  def show
+    @book = Book.find(params['id'])
   end
 end

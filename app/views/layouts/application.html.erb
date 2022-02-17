@@ -9,7 +9,15 @@
   </head>
 
 	<body>
-		<%= render :partial => 'shared/header' %>
+			<%= render :partial => 'shared/header' %>
 
-	</body>
+			<div id="container">
+				<%= render :partial => 'shared/side_nav'%>
+
+	   		<%= yield %>
+
+				<div class="clear"></div>
+			</div>
+
+		</body>
 </html>
