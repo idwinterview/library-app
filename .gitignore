@@ -16,3 +16,6 @@
 .ruby-gemset
 .ruby-version
 .byebug_history
+
+# Ignore vendor directory
+/vendor/*
