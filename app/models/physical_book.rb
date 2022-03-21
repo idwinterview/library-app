@@ -1,4 +1,4 @@
 class PhysicalBook < Book
-    belongs_to: Customer
-    belongs_to: Librarian
+    belongs_to :Customer
+    belongs_to :Librarian
 end
