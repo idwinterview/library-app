@@ -12,10 +12,12 @@ LibraryApp::Application.configure do
   config.static_cache_control = "public, max-age=3600"
 
   # Log error messages when you accidentally call methods on nil
+  #originally true
   config.whiny_nils = true
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
+  ####CHANGED
   config.action_controller.perform_caching = false
 
   # Raise exceptions instead of rendering exception templates

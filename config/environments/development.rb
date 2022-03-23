@@ -13,6 +13,7 @@ LibraryApp::Application.configure do
 
   # Show full error reports and disable caching
   config.consider_all_requests_local       = true
+  ####CHANGED
   config.action_controller.perform_caching = false
 
   # Don't care if the mailer can't send
@@ -29,4 +30,6 @@ LibraryApp::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 end

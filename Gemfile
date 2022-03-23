@@ -5,6 +5,9 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'pg'
 gem 'test-unit', '~> 3.0'
+gem 'puma', '~> 5.2'
+gem 'annotate', '>= 3.1.1'
+#gem 'i18n'
 
 
 # Gems used only for assets and not required
@@ -14,7 +17,7 @@ group :assets do
   gem 'coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
+   #gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
 end
@@ -25,4 +28,6 @@ group :development, :test do
   gem 'mocha', '1.3.0' #forced version 
   gem 'shoulda', '~> 3.5'
   gem 'rails-controller-testing'
+  gem 'pry-rails'
+  gem 'rspec-rails'
 end

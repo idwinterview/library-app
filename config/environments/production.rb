@@ -5,7 +5,9 @@ LibraryApp::Application.configure do
   config.cache_classes = true
 
   # Full error reports are disabled and caching is turned on
+  #originally false
   config.consider_all_requests_local       = false
+  ####CHANGED
   config.action_controller.perform_caching = true
 
   # Disable Rails's static asset server (Apache or nginx will already do this)
@@ -34,7 +36,8 @@ LibraryApp::Application.configure do
   # config.log_level = :debug
 
   # Prepend all log lines with the following tags
-  # config.log_tags = [ :subdomain, :uuid ]
+  ###########
+  #config.log_tags = [ :subdomain, :uuid ]
 
   # Use a different logger for distributed setups
   # config.logger = ActiveSupport::TaggedLogging.new(SyslogLogger.new)

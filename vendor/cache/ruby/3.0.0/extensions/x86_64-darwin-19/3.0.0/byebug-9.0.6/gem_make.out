@@ -1,0 +1,44 @@
+current directory: /Users/marialaina/projects/equifax/library-app/vendor/cache/ruby/3.0.0/gems/byebug-9.0.6/ext/byebug
+/Users/marialaina/.rbenv/versions/3.0.1/bin/ruby -I /Users/marialaina/.rbenv/versions/3.0.1/lib/ruby/3.0.0 -r ./siteconf20220319-93451-s2v7wa.rb extconf.rb
+creating Makefile
+
+current directory: /Users/marialaina/projects/equifax/library-app/vendor/cache/ruby/3.0.0/gems/byebug-9.0.6/ext/byebug
+make DESTDIR\= clean
+
+current directory: /Users/marialaina/projects/equifax/library-app/vendor/cache/ruby/3.0.0/gems/byebug-9.0.6/ext/byebug
+make DESTDIR\=
+compiling breakpoint.c
+compiling byebug.c
+compiling context.c
+context.c:190:20: warning: incompatible pointer types passing 'VALUE (struct call_with_inspection_data *)' (aka 'unsigned long (struct call_with_inspection_data *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+  return rb_ensure(open_debug_inspector, (VALUE) data, close_debug_inspector,
+                   ^~~~~~~~~~~~~~~~~~~~
+/Users/marialaina/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/internal/iterator.h:53:24: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                       ^
+context.c:190:56: warning: incompatible pointer types passing 'VALUE (struct call_with_inspection_data *)' (aka 'unsigned long (struct call_with_inspection_data *)') to parameter of type 'VALUE (*)(VALUE)' (aka 'unsigned long (*)(unsigned long)') [-Wincompatible-pointer-types]
+  return rb_ensure(open_debug_inspector, (VALUE) data, close_debug_inspector,
+                                                       ^~~~~~~~~~~~~~~~~~~~~
+/Users/marialaina/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/internal/iterator.h:53:46: note: passing argument to parameter here
+VALUE rb_ensure(VALUE(*)(VALUE),VALUE,VALUE(*)(VALUE),VALUE);
+                                             ^
+context.c:672:3: warning: incompatible pointer types passing 'VALUE (VALUE)' (aka 'unsigned long (unsigned long)') to parameter of type 'VALUE (*)(VALUE, VALUE)' (aka 'unsigned long (*)(unsigned long, unsigned long)') [-Wincompatible-pointer-types]
+  rb_define_singleton_method(cDebugThread, "inherited", dt_inherited, 1);
+  ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/Users/marialaina/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/internal/anyargs.h:307:143: note: expanded from macro 'rb_define_singleton_method'
+#define rb_define_singleton_method(obj, mid, func, arity)   RBIMPL_ANYARGS_DISPATCH_rb_define_singleton_method((arity), (func))((obj), (mid), (func), (arity))
+                                                                                                                                              ^~~~~~
+/Users/marialaina/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/internal/anyargs.h:270:1: note: passing argument to parameter here
+RBIMPL_ANYARGS_DECL(rb_define_singleton_method, VALUE, const char *)
+^
+/Users/marialaina/.rbenv/versions/3.0.1/include/ruby-3.0.0/ruby/internal/anyargs.h:255:72: note: expanded from macro 'RBIMPL_ANYARGS_DECL'
+RBIMPL_ANYARGS_ATTRSET(sym) static void sym ## _01(__VA_ARGS__, VALUE(*)(VALUE, VALUE), int); \
+                                                                       ^
+3 warnings generated.
+compiling locker.c
+compiling threads.c
+linking shared-object byebug/byebug.bundle
+
+current directory: /Users/marialaina/projects/equifax/library-app/vendor/cache/ruby/3.0.0/gems/byebug-9.0.6/ext/byebug
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 byebug.bundle ./.gem.20220319-93451-qcgbio/byebug
