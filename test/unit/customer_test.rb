@@ -5,6 +5,7 @@ require 'mocha/mini_test'
 #https://api.rubyonrails.org/classes/ActiveSupport/Testing/Assertions.html
 #https://backend.turing.edu/module2/lessons/active_record_associations
 
+
 class Customertest < ActiveSupport::TestCase
   context "associations" do 
     context "#customer_books" do 
@@ -20,6 +21,8 @@ class Customertest < ActiveSupport::TestCase
     context "#books" do 
       should "have many books" do 
         # FIX ME I am broken
+        #was looking at the backend turing lesson to add to this
+        #can explain more in person
         customer = create(:customer)
         puts "customer"
         binding.pry
