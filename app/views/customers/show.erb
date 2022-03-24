@@ -1,0 +1,12 @@
+<div id="feature" class="floatLeft">
+  <div id="featureHeading">
+    <h1 class="floatLeft">Customer Info</h1>
+
+  </div>
+
+  <div id="featureWrap" class="floatLeft reports">  
+  <img src="../images/assets/user_pic.png" />
+<h1>See <%= @customer.first_name + ' '+ @customer.last_name%>'s report</h1>   
+<%= link_to "Edit My Profile", user_profiles_edit_path(@user)  %> <br>
+  </div>
+</div>
