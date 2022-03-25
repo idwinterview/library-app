@@ -1,8 +1,10 @@
 LibraryApp::Application.routes.draw do
   
-  resources :users do
+  resources :customers do
+    get '/customers/report', to: 'customers#reports'
     collection do
       get :list
+     
     end
   end
   
