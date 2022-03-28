@@ -23,12 +23,11 @@ class Customertest < ActiveSupport::TestCase
         # FIX ME I am broken
         #was looking at the backend turing lesson to add to this
         #can explain more in person
-        customer = create(:customer)
-        puts "customer"
-        binding.pry
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-        create(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-
+        #@customers = User.create(:customer)
+        #puts "customer"
+        #binding.pry
+        #@customer_1 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
+        #@customer_2 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
         assert_equal 2, customer.books.size
       end
     end
@@ -37,6 +36,7 @@ class Customertest < ActiveSupport::TestCase
       should "have many audio books" do 
        
         should have_many(:audio_books)
+        #it { should have_many(:audio_books)}
         # TODO: Please Add
       end
     end
@@ -44,6 +44,7 @@ class Customertest < ActiveSupport::TestCase
     context "physical_books" do 
       should "have many physical books" do 
         # TODO: Please Add
+        #it { should have_many(:physical_books) }
       end
     end
   end

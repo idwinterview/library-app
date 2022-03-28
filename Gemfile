@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org/'
 
 gem 'rails', '~> 6.1'
 gem 'jquery-rails'
@@ -30,4 +30,8 @@ group :development, :test do
   gem 'rails-controller-testing'
   gem 'pry-rails'
   gem 'rspec-rails'
+  #gem 'capybara'
+  #gem 'regexp_parser', '2.2.1'
+  
+  
 end

@@ -52,3 +52,29 @@ You should see this same information.
 Please commit any updates and/or comments to the repo. Add any additional comments, notes and/or instructions in the README under the "Enhancements" section. Also note if the db/seeds.rb file has been updated. The development team will review your submission and be ready for the technical portion of your interview.
 
 ## Enhancements
+
+## Steps to fix environment issues
+
+rbenv install 3.0.1
+rails install
+rebnv loacl 3.0.1
+rbenv local
+bundle install
+bundle exec rspec
+sudo gem install rails
+gem install rails --version 5.2.6
+sudo gem install rails --version 5.2.6
+
+# Work That I did
+1. I added a puma.rb file to Config folder
+2. I added to customers_test.rb
+3. Added to models used this as reference https://guides.rubyonrails.org/association_basics.html
+4. Added another file to the spec folder
+
+# My attempts
+1. Tried to debug environment issues I keep getting
+2. Tried to install capybara gem for testing, but I got environment issues
+3. Tried to install regexp_parser 2.2.1 gem for capybara
+4. Was trying to finish code in user.rb in models
+5. Was thinking of creating a docker container and running the application through there and see if that would've helped with all missing gems... Could explain the loguc further if need to.
+
