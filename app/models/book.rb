@@ -1,5 +1,5 @@
 class Book < ActiveRecord::Base
-  #belongs_to: Customer
-  #belongs_to: Librarian
+  belongs_to :customer
+  belongs_to :librarian
     
 end

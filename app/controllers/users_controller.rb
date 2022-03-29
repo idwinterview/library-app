@@ -10,5 +10,6 @@ class UsersController < ApplicationController
   def show
     @customer = Customer.where(["id = ?", params[:id]]).first
     @customer_books = CustomerBook.where(["customer_id = ?", params[:id]])
+   
   end
 end

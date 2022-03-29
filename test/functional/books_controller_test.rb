@@ -24,6 +24,7 @@ class BooksControllerTest < ActionController::TestCase
       book = create(:book)
       create(:customer_book, customer_id: customer.id, book_id: book.id)
 
+
       get :list, params: {id: book.id, customer_id: customer.id}
 
       assert assigns(:customer_books)

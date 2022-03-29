@@ -21,14 +21,12 @@ class Customertest < ActiveSupport::TestCase
     context "#books" do 
       should "have many books" do 
         # FIX ME I am broken
-        #was looking at the backend turing lesson to add to this
-        #can explain more in person
-        #@customers = User.create(:customer)
-        #puts "customer"
-        #binding.pry
-        #@customer_1 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-        #@customer_2 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
-        assert_equal 2, customer.books.size
+       
+        customer = Customer.create({first_name: 'mari', last_name: 'preciado'})
+
+        @customer_1 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
+        @customer_2 = @customers.create!(:customer_book, customer_id: customer.id, book_id: create(:book).id)
+        assert_equal 2, @customers.all
       end
     end
 
@@ -36,15 +34,22 @@ class Customertest < ActiveSupport::TestCase
       should "have many audio books" do 
        
         should have_many(:audio_books)
-        #it { should have_many(:audio_books)}
+        it { should have_many(:audio_books)}
         # TODO: Please Add
       end
     end
 
     context "physical_books" do 
       should "have many physical books" do 
+        
+        customer = create(:customer)
+        harry_potter = PhysicalBook.create(isbn: '0439708184', title: "Harry Potter and the Sorcerer's Stone", author: 'J.K. Rowling', category: 'fantasy')
+        rails = PhysicalBook.create(isbn: '0470081201', title: "Ruby on Rails For Dummies", author: 'Barry A. Burd', category: 'technology')
+        CustomerBook.create(customer_id: customer.id, book_id: rails.id)
+        CustomerBook.create(customer_id: customer.id, book_id: harry_potter.id)
+       
         # TODO: Please Add
-        #it { should have_many(:physical_books) }
+        it { should have_many(:physical_books) }
       end
     end
   end
