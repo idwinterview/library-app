@@ -76,5 +76,5 @@ sudo gem install rails --version 5.2.6
 2. Tried to install capybara gem for testing, but I got environment issues
 3. Tried to install regexp_parser 2.2.1 gem for capybara
 4. Was trying to finish code in user.rb in models
-5. Was thinking of creating a docker container and running the application through there and see if that would've helped with all missing gems... Could explain the loguc further if need to.
+5. Was thinking of creating a docker container and running the application through there and see if that would've helped with all missing gems... Could explain the logic further if need to.
 
